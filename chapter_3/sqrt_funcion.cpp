@@ -25,7 +25,7 @@ double sqrt_func(double n) {
 
 
 int main() {
-		for (int i=2;i<=10000;i++) {
+		for (int i=2;i<=100000;i++) {
 				cout << i << "\t" << sqrt_func((double)i) << "\n";
 		};
 }

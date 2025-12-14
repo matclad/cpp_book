@@ -10,17 +10,19 @@ double mod_func(double n1,double n2) {
 
 
 double better_sqrt(double n) {
+    if (n==0) return 0;
     double x0,x1;
-    x1=n/2;
+    x1=n;
     do {
         x0=x1;
-        x1=x0-(x0*x0-n)/(2*x0);
-    } while (mod_func(x1,x0)>.01) ;
+        //x1=x0-(x0*x0-n)/(2*x0);
+        x1=(x0*x0+n)/(2*x0); //simplifying we get this 
+    } while (mod_func(x1,x0)>.0000001) ;
     return x1;
 }
 
 int main() {
-    for (int i=1;i<=100;i++) {
+    for (int i=1;i<=100000;i++) {
         cout << "sqrt(" << i <<") =" << better_sqrt(i) << "\n";
     }
 }
